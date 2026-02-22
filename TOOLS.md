@@ -61,3 +61,34 @@ docker run -d --name my-service -p 8080:8080 my-service
 **例外情况：**
 - 临时测试脚本
 - 用户明确说明不使用 Docker
+
+### Git 提交规则
+
+**每次版本更新或任务完成必须：**
+1. ✅ 提交到本地 Git 仓库
+2. ✅ 推送到远程仓库（如果有远程）
+3. ✅ 在 commit message 最前面加 `<clawbot>` 标志
+
+**示例：**
+```bash
+# 正确的 commit message
+<clawbot> Initial commit: Docker 项目管理平台
+<clawbot> 添加新功能：容器日志查看
+<clawbot> 修复启动/停止按钮问题
+
+# 错误的 ❌
+Initial commit: Docker 项目管理平台
+添加新功能
+```
+
+**提交流程：**
+```bash
+# 1. 添加修改的文件
+git add .
+
+# 2. 提交（必须加 <clawbot> 标志）
+git commit -m "<clawbot> 描述内容"
+
+# 3. 推送到远程
+git push origin main
+```
